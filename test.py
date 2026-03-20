@@ -2,7 +2,7 @@ from database_connector.base import DatabaseConnector
 from database_connector.sqlite_connector import SQLiteConnector
 from database_connector.connection_pool import ConnectionPool
 
-with SQLiteConnector('student_db.sql') as conn:
+with SQLiteConnector('student_db') as conn:
     conn.execute('''CREATE TABLE Students(
         std_id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
@@ -20,7 +20,9 @@ with SQLiteConnector('student_db.sql') as conn:
     
     print("Student inserted.")
     results = conn.execute("SELECT * FROM Students")
+    results1 = conn.execute("SELECT * FROM Students WHERE age == 21")
     print(results)
+    print("\n", results1)
     
 connect = ConnectionPool(SQLiteConnector,3, db_path = 'student_db')
 

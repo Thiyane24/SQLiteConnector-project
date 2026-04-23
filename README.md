@@ -8,7 +8,8 @@
 
 **Database Connection Pool** is the third project in my OOP Python Data Engineering series. It implements a full database abstraction layer with a concrete SQLite connector and a connection pool that manages multiple reusable connections efficiently.
 
-In production data engineering, opening a new database connection for every query is expensive. This project solves that by keeping a fixed number of connections alive and lending them out to callers — returning them to the pool when done instead of closing them.
+In production data engineering, opening a new database connection for every query is expensive. This project solves that by keeping a fixed number of connections alive and lending them out to callers returning them to the pool when done instead of closing them.
+
 
 ---
 
